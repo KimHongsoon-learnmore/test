@@ -40,8 +40,10 @@ class Drop {
     const minDist = 100;
 
     if (dist < minDist) {
-      this.x += dx / dist;
-      this.y += dy / dist;
+      if (dist > 0) {
+        this.x += dx / dist;
+        this.y += dy / dist;
+      }
     } else {
       this.y += this.speed;
     }
